@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Timer = (props) => {
+export default function Timer(props) {
   const [sec, setSec] = useState(0);
 
   function handleClick(e) {
