@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 export default function Timer(props) {
   const [sec, setSec] = useState(0);
   const [start, setStart] = useState(false);
+  const [active, setActive] = useState(false);
 
   // function callBack() {
   //   setSec(sec + 1);
@@ -23,16 +24,19 @@ export default function Timer(props) {
   function handleClick(e) {
     setSec(sec + 1);
     setStart(true);
+    setActive(true);
   }
 
   function handleStop(e) {
     setStart(false);
+    setActive(false);
   }
 
   return (
     <div>
       <button onClick={handleClick}>Start</button>
-      {sec}
+      <h3>{sec}</h3>
+      <p>{active ? "Active" : "Not Active"}</p>
       <button onClick={handleStop}>Stop</button>
     </div>
   )
