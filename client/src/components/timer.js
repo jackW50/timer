@@ -37,11 +37,13 @@ export default function Timer(props) {
   }
 
   return (
-    <div>
-      <button onClick={handleClick}>Start</button>
-      <h3>{sec}</h3>
-      <p>{active ? "Active" : "Not Active"}</p>
-      <button onClick={handleStop}>Stop</button>
+    <div className="app">
+      <h3 className="time" >{sec}</h3>
+      <p>{active ? "Pause" : "Start"}</p>
+      <button className={`button button-primary button-primary-${active ? 'active' : 'inactive'}`} onClick={toggle}>{active ? "Pause" : "Start"}<</button>
+      <button className="button" onclick={reset}>
+        Reset
+      </button>
     </div>
   )
 }
